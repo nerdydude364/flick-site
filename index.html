@@ -229,6 +229,35 @@
     margin: 0 0 32px;
     font-size: 15px;
   }
+  .install {
+    padding: 56px 0 72px;
+    border-top: 1px solid var(--border);
+  }
+  .install h2 {
+    font-family: var(--font-display);
+    font-size: clamp(22px, 3vw, 28px);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin: 0 0 10px;
+  }
+  .install .sub {
+    color: var(--muted);
+    margin: 0 0 18px;
+    font-size: 15px;
+  }
+  .install pre {
+    margin: 0;
+    padding: 16px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--surface);
+    color: var(--fg);
+    font-family: var(--font-mono);
+    font-size: 13px;
+    line-height: 1.6;
+    overflow-x: auto;
+    white-space: pre;
+  }
   .download-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -417,6 +446,17 @@
         </a>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="install" data-od-id="install-apt">
+  <div class="wrap">
+    <h2>Install via apt</h2>
+    <p class="sub">For Debian and Ubuntu-based Linux distributions.</p>
+    <pre>curl -fsSL https://apt.flick.free/pubkey.gpg | sudo gpg --dearmor -o /usr/share/keyrings/flick-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/flick-archive-keyring.gpg] https://apt.flick.free stable main" | sudo tee /etc/apt/sources.list.d/flick.list
+sudo apt-get update
+sudo apt-get install flick</pre>
   </div>
 </section>
 
