@@ -212,6 +212,75 @@
   .screen-card h3 { font-size: 15px; font-weight: 550; margin: 0 0 4px; }
   .screen-card p { font-size: 13px; color: var(--muted); margin: 0; }
 
+  /* DOWNLOADS */
+  .downloads {
+    padding: 64px 0 88px;
+    border-top: 1px solid var(--border);
+  }
+  .downloads h2 {
+    font-family: var(--font-display);
+    font-size: clamp(22px, 3vw, 28px);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin: 0 0 8px;
+  }
+  .downloads .sub {
+    color: var(--muted);
+    margin: 0 0 32px;
+    font-size: 15px;
+  }
+  .download-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+  }
+  .download-card {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--surface);
+    padding: 16px;
+    transition: border-color .15s, background .15s;
+  }
+  .download-card:hover {
+    border-color: color-mix(in oklch, var(--accent) 34%, var(--border));
+    background: color-mix(in oklch, var(--accent) 3%, var(--surface));
+  }
+  .download-meta {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .download-meta h3 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 560;
+    letter-spacing: -0.005em;
+  }
+  .download-arch {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .download-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 550;
+    letter-spacing: 0.02em;
+    color: var(--accent-ink);
+  }
+  .download-link svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+  }
+
   /* FOOTER */
   footer { border-top: 1px solid var(--border); padding: 32px 0 40px; }
   .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
@@ -274,10 +343,87 @@
   </div>
 </section>
 
+<section class="downloads" data-od-id="downloads">
+  <div class="wrap">
+    <h2>Download Flick</h2>
+    <p class="sub">Choose your platform and architecture.</p>
+    <div class="download-grid">
+      <div class="download-card">
+        <div class="download-meta">
+          <h3>macOS</h3>
+          <span class="download-arch">amd64</span>
+        </div>
+        <a class="download-link" href="https://github.com/nerdydude364/flick/releases/download/v1.3.1/flick_1.3.1_amd64.dmg" target="_blank" rel="noopener noreferrer" download="flick_1.3.1_amd64.dmg" aria-label="Download Flick for macOS amd64">
+          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.25a.75.75 0 0 1 .75.75v6.19l2.22-2.22a.75.75 0 1 1 1.06 1.06l-3.5 3.5a.75.75 0 0 1-1.06 0l-3.5-3.5a.75.75 0 1 1 1.06-1.06l2.22 2.22V2A.75.75 0 0 1 8 1.25zm-5 11a.75.75 0 0 1 .75.75v.25h8.5V13a.75.75 0 0 1 1.5 0v1A.75.75 0 0 1 13 14.75H3A.75.75 0 0 1 2.25 14v-1a.75.75 0 0 1 .75-.75z"/></svg>
+          Download (.dmg)
+        </a>
+      </div>
+      <div class="download-card">
+        <div class="download-meta">
+          <h3>macOS</h3>
+          <span class="download-arch">arm64</span>
+        </div>
+        <a class="download-link" href="https://github.com/nerdydude364/flick/releases/download/v1.3.1/flick_1.3.1_arm64.dmg" target="_blank" rel="noopener noreferrer" download="flick_1.3.1_arm64.dmg" aria-label="Download Flick for macOS arm64">
+          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.25a.75.75 0 0 1 .75.75v6.19l2.22-2.22a.75.75 0 1 1 1.06 1.06l-3.5 3.5a.75.75 0 0 1-1.06 0l-3.5-3.5a.75.75 0 1 1 1.06-1.06l2.22 2.22V2A.75.75 0 0 1 8 1.25zm-5 11a.75.75 0 0 1 .75.75v.25h8.5V13a.75.75 0 0 1 1.5 0v1A.75.75 0 0 1 13 14.75H3A.75.75 0 0 1 2.25 14v-1a.75.75 0 0 1 .75-.75z"/></svg>
+          Download (.dmg)
+        </a>
+      </div>
+      <div class="download-card">
+        <div class="download-meta">
+          <h3>Linux</h3>
+          <span class="download-arch">amd64</span>
+        </div>
+        <a class="download-link" href="https://github.com/nerdydude364/flick/releases/download/v1.3.1/flick_1.3.1_amd64.deb" target="_blank" rel="noopener noreferrer" download="flick_1.3.1_amd64.deb" aria-label="Download Flick for Linux amd64">
+          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.25a.75.75 0 0 1 .75.75v6.19l2.22-2.22a.75.75 0 1 1 1.06 1.06l-3.5 3.5a.75.75 0 0 1-1.06 0l-3.5-3.5a.75.75 0 1 1 1.06-1.06l2.22 2.22V2A.75.75 0 0 1 8 1.25zm-5 11a.75.75 0 0 1 .75.75v.25h8.5V13a.75.75 0 0 1 1.5 0v1A.75.75 0 0 1 13 14.75H3A.75.75 0 0 1 2.25 14v-1a.75.75 0 0 1 .75-.75z"/></svg>
+          Download (.deb)
+        </a>
+        <a class="download-link" href="https://github.com/nerdydude364/flick/releases/download/v1.3.1/flick_1.3.1_amd64.AppImage" target="_blank" rel="noopener noreferrer" download="flick_1.3.1_amd64.AppImage" aria-label="Download Flick for Linux amd64">
+          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.25a.75.75 0 0 1 .75.75v6.19l2.22-2.22a.75.75 0 1 1 1.06 1.06l-3.5 3.5a.75.75 0 0 1-1.06 0l-3.5-3.5a.75.75 0 1 1 1.06-1.06l2.22 2.22V2A.75.75 0 0 1 8 1.25zm-5 11a.75.75 0 0 1 .75.75v.25h8.5V13a.75.75 0 0 1 1.5 0v1A.75.75 0 0 1 13 14.75H3A.75.75 0 0 1 2.25 14v-1a.75.75 0 0 1 .75-.75z"/></svg>
+          Download (.AppImage)
+        </a>
+      </div>
+      <div class="download-card">
+        <div class="download-meta">
+          <h3>Linux</h3>
+          <span class="download-arch">arm64</span>
+        </div>
+        <a class="download-link" href="https://github.com/nerdydude364/flick/releases/download/v1.3.1/flick_1.3.1_arm64.deb" target="_blank" rel="noopener noreferrer" download="flick_1.3.1_arm64.deb" aria-label="Download Flick for Linux arm64">
+          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.25a.75.75 0 0 1 .75.75v6.19l2.22-2.22a.75.75 0 1 1 1.06 1.06l-3.5 3.5a.75.75 0 0 1-1.06 0l-3.5-3.5a.75.75 0 1 1 1.06-1.06l2.22 2.22V2A.75.75 0 0 1 8 1.25zm-5 11a.75.75 0 0 1 .75.75v.25h8.5V13a.75.75 0 0 1 1.5 0v1A.75.75 0 0 1 13 14.75H3A.75.75 0 0 1 2.25 14v-1a.75.75 0 0 1 .75-.75z"/></svg>
+          Download (.deb)
+        </a>
+        <a class="download-link" href="https://github.com/nerdydude364/flick/releases/download/v1.3.1/flick_1.3.1_arm64.AppImage" target="_blank" rel="noopener noreferrer" download="flick_1.3.1_arm64.AppImage" aria-label="Download Flick for Linux arm64">
+          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.25a.75.75 0 0 1 .75.75v6.19l2.22-2.22a.75.75 0 1 1 1.06 1.06l-3.5 3.5a.75.75 0 0 1-1.06 0l-3.5-3.5a.75.75 0 1 1 1.06-1.06l2.22 2.22V2A.75.75 0 0 1 8 1.25zm-5 11a.75.75 0 0 1 .75.75v.25h8.5V13a.75.75 0 0 1 1.5 0v1A.75.75 0 0 1 13 14.75H3A.75.75 0 0 1 2.25 14v-1a.75.75 0 0 1 .75-.75z"/></svg>
+          Download (.AppImage)
+        </a>
+      </div>
+      <div class="download-card">
+        <div class="download-meta">
+          <h3>Windows</h3>
+          <span class="download-arch">amd64</span>
+        </div>
+        <a class="download-link" href="#coming-soon" aria-label="Download Flick for Windows amd64">
+          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.25a.75.75 0 0 1 .75.75v6.19l2.22-2.22a.75.75 0 1 1 1.06 1.06l-3.5 3.5a.75.75 0 0 1-1.06 0l-3.5-3.5a.75.75 0 1 1 1.06-1.06l2.22 2.22V2A.75.75 0 0 1 8 1.25zm-5 11a.75.75 0 0 1 .75.75v.25h8.5V13a.75.75 0 0 1 1.5 0v1A.75.75 0 0 1 13 14.75H3A.75.75 0 0 1 2.25 14v-1a.75.75 0 0 1 .75-.75z"/></svg>
+          Coming Soon!
+        </a>
+      </div>
+      <div class="download-card">
+        <div class="download-meta">
+          <h3>Windows</h3>
+          <span class="download-arch">arm64</span>
+        </div>
+        <a class="download-link" href="#coming-soon" aria-label="Download Flick for Windows arm64">
+          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.25a.75.75 0 0 1 .75.75v6.19l2.22-2.22a.75.75 0 1 1 1.06 1.06l-3.5 3.5a.75.75 0 0 1-1.06 0l-3.5-3.5a.75.75 0 1 1 1.06-1.06l2.22 2.22V2A.75.75 0 0 1 8 1.25zm-5 11a.75.75 0 0 1 .75.75v.25h8.5V13a.75.75 0 0 1 1.5 0v1A.75.75 0 0 1 13 14.75H3A.75.75 0 0 1 2.25 14v-1a.75.75 0 0 1 .75-.75z"/></svg>
+          Coming Soon!
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="screens" data-od-id="screenshots">
   <div class="wrap">
     <h2>A closer look</h2>
-    <p class="sub">Placeholders for now — swap in real screenshots when you have them.</p>
+    <p class="sub">Clean. Simple. Intuitive.</p>
     <div class="screen-grid">
       <div class="screen-card">
         <div class="ph-img"><img src="ss_gallery1.png" alt="Screenshot of gallery view" /></div>
