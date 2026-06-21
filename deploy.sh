@@ -4,8 +4,9 @@ set -euo pipefail
 RELEASE_URL="https://github.com/nerdydude364/flick/releases/latest"
 REPO="nerdydude364/flick"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-OUT_DIR="$SCRIPT_DIR/release"
-INDEX_HTML="$SCRIPT_DIR/index.html"
+PUB_DIR="$SCRIPT_DIR/public"
+OUT_DIR="$PUB_DIR/release"
+INDEX_HTML="$PUB_DIR/index.html"
 
 mkdir -p "$OUT_DIR"
 
@@ -43,3 +44,9 @@ while IFS= read -r url; do
 done <<< "$asset_urls"
 
 echo "Done. Assets saved to $OUT_DIR/"
+
+if [ -d /var/www/flick.free ]; then
+  rsync -Pav --delete "$PUB_DIR/" /var/www/flick.free
+elif [[ -f ~/.ssh/config ]]; then
+  grep -RHFn "Host nerdy" ~/.ssh/config > /dev/null && rsync -Pav --delete "$PUB_DIR/" nerdy:/var/www/flick.free
+fi
